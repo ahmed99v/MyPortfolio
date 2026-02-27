@@ -25,7 +25,7 @@ const Header = ({ darkMode }) => {
     { icon: <FaInfoCircle />, text: 'About', href: '#about', delay: 0.5 },
     { icon: <FaStar />, text: 'Reviews', href: '#reviews', delay: 0.7 },
     { icon: <FaEnvelope />, text: 'Contact', href: '#contact', delay: 0.8 },
-    { icon: <FaDownload />, text: 'Download', href: './src/assets/resume/Ahmed Forneas.pdf', delay: 0.9, download: true }
+    { icon: <FaDownload />, text: 'Download', href: '/MyPortfolio/src/assets/resume/Ahmed Forneas.pdf', delay: 0.9, download: true }
   ];
 
   return (
