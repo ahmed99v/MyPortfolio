@@ -6,6 +6,7 @@ import {
 } from 'react-icons/fa';
 import { GiGalaxy } from 'react-icons/gi';
 import { motion } from 'framer-motion';
+import resumePdf from '../../assets/resume/Ahmed Forneas.pdf';
 import './header.css';
 
 const MotionDiv = motion.div;
@@ -20,12 +21,33 @@ const Header = ({ darkMode }) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const handleResumeDownload = async (e) => {
+    e.preventDefault();
+    
+    try {
+      const response = await fetch(resumePdf);
+      const blob = await response.blob();
+      const blobUrl = window.URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = blobUrl;
+      link.download = 'Ahmed Forneas.pdf';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      window.URL.revokeObjectURL(blobUrl);
+    } catch (error) {
+      console.error('Error downloading resume:', error);
+      // Final fallback: open in new tab
+      window.open(resumePdf, '_blank');
+    }
+  };
+
   const navLinks = [
     { icon: <FaHome />, text: 'Home', href: '#', delay: 0.3 },
     { icon: <FaInfoCircle />, text: 'About', href: '#about', delay: 0.5 },
     { icon: <FaStar />, text: 'Reviews', href: '#reviews', delay: 0.7 },
     { icon: <FaEnvelope />, text: 'Contact', href: '#contact', delay: 0.8 },
-    { icon: <FaDownload />, text: 'Download', href: '/MyPortfolio/src/assets/resume/Ahmed Forneas.pdf', delay: 0.9, download: true }
+    { icon: <FaDownload />, text: 'Download', href: '#', delay: 0.9, download: true, onClick: handleResumeDownload }
   ];
 
   return (
@@ -83,6 +105,7 @@ const Header = ({ darkMode }) => {
                 download={link.download ? 'Ahmed Forneas.pdf' : undefined}
                 target={link.download ? '_blank' : undefined}
                 rel={link.download ? 'noopener noreferrer' : undefined}
+                onClick={link.onClick || undefined}
                 onMouseEnter={() => setHoveredItem(index)}
                 onMouseLeave={() => setHoveredItem(null)}
                 initial={{ opacity: 0, y: -20 }}
