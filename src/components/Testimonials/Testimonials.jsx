@@ -17,7 +17,7 @@ const testimonials = [
     author: "C.Schepke",
     role: "Professor",
     image: "https://randomuser.me/api/portraits/men/55.jpg",
-    date: "June 2021",
+    date: "January 2018",
   },
   {
     id: 2,
@@ -26,7 +26,7 @@ const testimonials = [
     author: "M.Benjamin",
     role: "Recruiter",
     image: "https://randomuser.me/api/portraits/men/49.jpg",
-    date: " September 2023"
+    date: " September 2020"
   },
   {
     id: 3, 

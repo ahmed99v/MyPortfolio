@@ -89,12 +89,64 @@
   letter-spacing: 0.5px;
 }
 
+.specials-grid-container {
+  position: relative;
+  z-index: 1;
+  padding-bottom: 20px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  background: var(--gold-gradient);
+  border: none;
+  border-radius: 50%;
+  color: var(--dark);
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: var(--transition);
+  box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+  opacity: 0.9;
+}
+
+.nav-arrow:hover {
+  opacity: 1;
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.5);
+}
+
+.nav-arrow:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+.nav-arrow-left {
+  left: 20px;
+}
+
+.nav-arrow-right {
+  right: 20px;
+}
+
 .specials-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 40px;
   position: relative;
   z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
 }
 
 .special-card {
@@ -112,6 +164,15 @@
   transform: translateY(-10px) scale(1.02);
   box-shadow: var(--shadow);
   border-color: var(--gold);
+}
+
+.special-card.clickable {
+  cursor: pointer;
+}
+
+.special-card.clickable:hover {
+  border-color: var(--gold);
+  box-shadow: 0 15px 40px rgba(212, 175, 55, 0.4);
 }
 
 .special-image {
@@ -293,9 +354,22 @@
   }
   
   .specials-grid {
-    grid-template-columns: 1fr;
-    max-width: 500px;
-    margin: 0 auto;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+
+  .nav-arrow {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+
+  .nav-arrow-left {
+    left: 10px;
+  }
+
+  .nav-arrow-right {
+    right: 10px;
   }
 }
 
@@ -308,11 +382,34 @@
     font-size: 2rem;
   }
   
+  .specials-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+  }
+
+  .nav-arrow {
+    width: 35px;
+    height: 35px;
+    font-size: 0.9rem;
+  }
+
+  .nav-arrow-left {
+    left: 5px;
+  }
+
+  .nav-arrow-right {
+    right: 5px;
+  }
+  
   .special-content {
-    padding: 25px;
+    padding: 20px;
   }
   
   .special-content h3 {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
+  }
+  
+  .special-content p {
+    font-size: 0.9rem;
   }
 }

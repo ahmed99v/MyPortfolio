@@ -35,8 +35,8 @@ const Slide = () => {
       image: slide_2,
       alt: 'AI based Python program for health care',
       title: 'Welcome to my portfolio',
-      subtitle: 'I am a AI Engineer.',
-      highlight: 'AI Engineer'
+      subtitle: 'I am a Senior Software Engineer.',
+      highlight: 'Software Engineer'
     }
   ];
 

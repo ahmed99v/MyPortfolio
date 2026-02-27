@@ -21,11 +21,11 @@ const Vision = () => {
     {
       id: 1,
       role: "Build top skills",
-      title: "Top senior developer",
+      title: "Top Software Engineer",
       year: "2028",
       type: "three",
       image: future_1,
-      description: "I’m becoming a world-class full-stack developer and AI expert, building innovative products with global impact and inspiring future innovation.",
+      description: "I’m becoming a world-class Senior Software Engineer and AI expert, building innovative products with global impact and inspiring future innovation.",
       featured: true,
       member: "1",
       hourly: "$40",
